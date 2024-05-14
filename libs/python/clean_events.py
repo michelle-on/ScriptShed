@@ -1,10 +1,11 @@
-from notion_cliente import Cliente
+from notion_client import Client
+from dotenv import load_dotenv
 import datetime
 import os
 
-notion = Cliente(auth= os.environ["token_notion"])
-
-database_id = os.environ["db_credentials"]
+load_dotenv()
+notion = Client(auth= os.getenv("token_notion"))
+database_id = os.getenv("db_credentials")
 
 def check_events():
     
